@@ -60,8 +60,8 @@ class Component(models.Model):
     )
 
     class Meta:
-        verbose_name = "Ингредиент"
-        verbose_name_plural = "Ингредиенты"
+        verbose_name = "Ингредиент рецепта"
+        verbose_name_plural = "Ингредиенты рецепта"
         constraints = [
             models.UniqueConstraint(
                 fields=["recipe", "ingredient"],
@@ -113,6 +113,10 @@ class Recipe(models.Model):
         ordering = ("-published",)
         verbose_name = "Рецепт"
         verbose_name_plural = "Рецепты"
+        constraints = [models.UniqueConstraint(
+            fields=["author", "name"],
+            name="unique_authors_recipe"
+        ), ]
 
     def __str__(self):
         return self.name

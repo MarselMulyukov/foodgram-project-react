@@ -27,9 +27,10 @@ services:
     env_file:
       - ./.env
   backend:
-    build:
-      context: ../backend
-      dockerfile: Dockerfile
+    image: mulyukov/foodgram_backend_mulyukov:latest 
+    # build:
+    #   context: ../backend
+    #   dockerfile: Dockerfile
     restart: always
     volumes:
       - static_value:/app/staticfiles/
