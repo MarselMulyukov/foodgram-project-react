@@ -73,6 +73,7 @@ jobs:
             cd foodgram
             sudo docker-compose stop
             sudo docker-compose rm backend
+            sudo docker system prune
             sudo docker rmi mulyukov/foodgram_backend_mulyukov
             touch .env
             echo -n >> .env
