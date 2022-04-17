@@ -73,7 +73,7 @@ jobs:
             cd foodgram
             sudo docker-compose stop
             sudo docker-compose rm backend
-            sudo docker system prune
+            sudo docker system prune -f
             touch .env
             echo -n >> .env
             echo DB_ENGINE=${{ secrets.DB_ENGINE }} >> .env
